@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { Typography, Paper, Grid, Button } from '@material-ui/core'
-import Skeleton from '@material-ui/lab/Skeleton';
-import { useRouter } from 'next/router'
-import Web3 from 'web3';
-
-import classes from './chain.module.css'
-
-import stores from '../../stores/index.js'
-import { getProvider } from '../../utils'
-
+import { Button, Paper, Typography } from '@material-ui/core';
+import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
 import {
-  ERROR,
-  CONNECT_WALLET,
-  TRY_CONNECT_WALLET,
-  ACCOUNT_CONFIGURED
-} from '../../stores/constants'
+  ACCOUNT_CONFIGURED, ERROR, TRY_CONNECT_WALLET
+} from '../../stores/constants';
+import stores from '../../stores/index.js';
+import { getProvider } from '../../utils';
+import classes from './chain.module.css';
+
+
+
 
 export default function Chain({ chain }) {
   const router = useRouter()
@@ -97,11 +92,7 @@ export default function Chain({ chain }) {
     <Paper elevation={ 1 } className={ classes.chainContainer } key={ chain.chainId }>
       <div className={ classes.chainNameContainer }>
         <img
-          src='/connectors/icn-asd.svg'
-          onError={e => {
-            e.target.onerror = null;
-            e.target.src = "/chains/unknown-logo.png";
-          }}
+          src='https://console.settlemint.com/assets/icons/matic-token-icon.svg'
           width={ 28 }
           height={ 28 }
           className={ classes.avatar }
