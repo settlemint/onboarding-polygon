@@ -86,7 +86,6 @@ scripts/_helpers/tmp-fetch-env-m1.sh
 cache
 storageLayout
 lost+found
-yarn.lock
 abi
 artifacts
 typechain
